@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.calculator {
+    margin: 100px auto;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    background-color: grey;
+    padding: 15px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.display {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    background: black;
+    width: 425px;
+    height: 100px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    color: white;
+    text-align: right;
+    padding: 15px;
+    overflow: initial;
+    font-size: 40px;
+}
+
+.display div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-end;
+    font-size: 20px;
+}
+
+.display #operator{
+
+}
+
+.display #operation {
+    margin-left: 10px;
+}
+
+
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.row ul{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.row-item-button {
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.row-5 ul li:last-child .row-item-button {
+    width: 105px;
+}
