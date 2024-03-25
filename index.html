@@ -9,9 +9,10 @@
 
 <main class='calculator'>
     <div class="display">
-        <p id="operator"></p>
+        <div><p id="operator"></p>
+            <p id="operation"></p></div>
+
         <p id="display"></p>
-        <p id="inner-display"></p>
     </div>
     <div class="buttons">
         <div class="row row-1">
@@ -83,13 +84,13 @@
         <div class="row row-5">
             <ul>
                 <li class="row-item">
-                    <button type="button" class="row-item-button">0</button>
+                    <button type="button" class="row-item-button number">0</button>
                 </li>
                 <li class="row-item">
-                    <button type="button" class="row-item-button">.</button>
+                    <button type="button" class="row-item-button number">.</button>
                 </li>
                 <li class="row-item">
-                    <button type="button" class="row-item-button">=</button>
+                    <button type="button" class="row-item-button" id="equal">=</button>
                 </li>
             </ul>
         </div>

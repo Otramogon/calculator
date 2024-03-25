@@ -9,19 +9,21 @@ ul {
 
 .calculator {
     margin: 100px auto;
-    width: 215px;
+    width: 450px;
     display: flex;
     flex-direction: column;
     background-color: grey;
     padding: 15px;
     border-radius: 10px;
+    align-items: center;
 }
 
 .display {
     display: grid;
     grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
     background: black;
-    width: 185px;
+    width: 425px;
     height: 100px;
     margin-bottom: 5px;
     border-radius: 10px;
@@ -32,9 +34,23 @@ ul {
     font-size: 40px;
 }
 
-.display #operator {
-    font-size: 15px;
+.display div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-end;
+    font-size: 20px;
 }
+
+.display #operator{
+
+}
+
+.display #operation {
+    margin-left: 10px;
+}
+
+
 
 .buttons {
     display: flex;
