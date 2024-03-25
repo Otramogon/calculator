@@ -105,8 +105,6 @@ function handleOperation() {
     }
     if (operation.innerText === '%') {
         handePercentage()
-        // result = Number(operator.innerText) * Number(display.innerText)
-        // display.innerText = result
     }
     operator.innerText = operator.innerText.slice(operator.innerText.length)
     operation.innerText = '='
