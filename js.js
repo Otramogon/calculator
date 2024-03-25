@@ -26,6 +26,12 @@ function handleDelete() {
 
 for (let i = 0; i < numberButtons.length; i++) {
     numberButtons[i].addEventListener('click', function () {
+        if(display.innerText.includes('.',0) && numberButtons[i].innerText === '.') {
+            return;
+        }
+        if(display.innerText === '' && numberButtons[i].innerText === '.') {
+              display.innerText = '0'
+        }
         if (display.innerText.length > 6) {
             return
         } else if (operation.innerText === '=') {
