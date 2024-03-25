@@ -43,10 +43,36 @@ for (let i = 0; i < numberButtons.length; i++) {
 
 for (let i = 0; i < operatorButtons.length; i++) {
     operatorButtons[i].addEventListener('click', function () {
-        operator.innerText = display.innerText
-        display.innerText = display.innerText.slice(display.innerText.length)
-        operation.innerText = operatorButtons[i].innerText
+        if (operatorButtons[i].innerText === '%' && operation.innerText !== '') {
+            handePercentage()
+            console.log(sessionStorage.getItem('percentage'))
+            operator.innerText = sessionStorage.getItem('operator')
+            operation.innerText = sessionStorage.getItem('operation')
+            display.innerText = sessionStorage.getItem('percentage')
+
+        }
+        else if (display.innerText === '') {
+            operation.innerText = operatorButtons[i].innerText
+        } else {
+            operator.innerText = display.innerText
+            display.innerText = display.innerText.slice(display.innerText.length)
+            operation.innerText = operatorButtons[i].innerText
+        }
     });
+}
+
+function handePercentage() {
+    let result
+    if (display.innerText === '') {
+        result = Number(operator.innerText) / 100
+        display.innerText = result
+    } else if (operation.innerText !== '%') {
+        result = Number(operator.innerText) / 100 * Number(display.innerText)
+        sessionStorage.setItem('percentage', result)
+        sessionStorage.setItem('operator', operator.innerText)
+        sessionStorage.setItem('operation', operation.innerText)
+    }
+
 }
 
 equal.onclick = () => {
@@ -55,8 +81,6 @@ equal.onclick = () => {
 
 function handleOperation() {
     let result
-    console.log(Number(operator.innerText))
-    console.log(operation.innerText)
     if (operation.innerText === '-') {
         result = Number(operator.innerText) - Number(display.innerText)
         display.innerText = result
@@ -80,8 +104,9 @@ function handleOperation() {
         display.innerText = result
     }
     if (operation.innerText === '%') {
-        result = Number(operator.innerText) * Number(display.innerText)
-        display.innerText = result
+        handePercentage()
+        // result = Number(operator.innerText) * Number(display.innerText)
+        // display.innerText = result
     }
     operator.innerText = operator.innerText.slice(operator.innerText.length)
     operation.innerText = '='
